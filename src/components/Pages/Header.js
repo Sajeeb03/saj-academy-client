@@ -3,14 +3,14 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import logo from "../assets/logo.png"
+import logo from "../../assets/logo.png"
 
 const Header = () => {
     return (
-        <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+        <Navbar collapseOnSelect expand="lg" bg="white" variant="light">
             <Container>
                 <Navbar.Brand href="#home">
-                    <img style={{ height: "60px", width: "300px", margin: '0', padding: '0px' }} className='' src={logo} alt="" />
+                    <img style={{ height: "60px", width: "300px", marginLeft: '-13px', padding: '0px' }} className='' src={logo} alt="" />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
