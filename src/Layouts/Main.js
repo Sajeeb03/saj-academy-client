@@ -4,10 +4,14 @@ import Header from '../components/Pages/Header';
 
 const Main = () => {
     return (
-        <div>
-            <Header></Header>
-            <Outlet></Outlet>
-        </div>
+        <>
+            <div>
+                <Header></Header>
+            </div>
+            <div style={{ height: '100vh' }} className='bg-light'>
+                <Outlet></Outlet>
+            </div>
+        </>
     );
 };
 

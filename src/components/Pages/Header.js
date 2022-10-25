@@ -1,16 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link } from 'react-router-dom';
 import logo from "../../assets/logo.png"
+import { AuthContext } from '../../Context/AuthProvider';
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext);
+    const handleSignOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(err => console.error(err))
+    }
+
     return (
         <Navbar collapseOnSelect expand="lg" bg="white" variant="light">
             <Container>
                 <Navbar.Brand href="#home">
-                    <img style={{ height: "60px", width: "300px", marginLeft: '-13px', padding: '0px' }} className='' src={logo} alt="" />
+                    <img style={{ height: "50px", width: "300px", marginLeft: '-25px', padding: '0px' }} className='' src={logo} alt="" />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
@@ -29,12 +38,11 @@ const Header = () => {
                             </NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
-                    <Nav>
-                        <Nav.Link href="#deets">More deets</Nav.Link>
-                        <Nav.Link eventKey={2} href="#memes">
-                            Dank memes
-                        </Nav.Link>
-                    </Nav>
+                    <div>
+                        <>
+                            {user?.uid ? <button onClick={handleSignOut}>Sign Out</button> : <Link to="/login" className='text-decoration-none'>Sign In</Link>}
+                        </>
+                    </div>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
