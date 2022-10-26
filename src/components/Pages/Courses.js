@@ -10,11 +10,14 @@ const Courses = () => {
     console.log(courses)
     return (
         <>
-            <h1 className='text-center pt-4'>Our Courses</h1>
-            <Container className=''>
+
+            <div className='image'>
+                <h1 className='image-overlay'>Explore Our Courses</h1>
+            </div>
+            <Container className='my-4 courses-container'>
                 <Row>
                     <Col lg={9}>
-                        <div className=''>
+
                             <div className='course'>
                                 {
                                     courses.map((course, idx) => <div className='bg-white shadow-lg rounded-2' key={idx}>
@@ -23,11 +26,13 @@ const Courses = () => {
                                     </div>)
                                 }
                             </div>
-                        </div>
+
                     </Col>
                     <Col lg={3}>
                         <div className='bg-white p-4 shadow-lg'>
-                            {courses.map((course, idx) => <p key={idx}><Link className='text-decoration-none' to={`../course/${course.id}`}>{course.title}</Link></p>)}
+                            <h3>Courses We Offer</h3>
+                            <p><small>Click to explore more</small></p>
+                            {courses.map((course, idx) => <p className='sidebar-text' key={idx}><Link className='text-decoration-none' to={`../course/${course.id}`}>{course.title}</Link></p>)}
                         </div>
                     </Col>
                 </Row>
