@@ -1,7 +1,8 @@
 import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 
 
@@ -9,7 +10,8 @@ const Register = () => {
     const [userInfo, setUserInfo] = useState({ email: "", password: "" })
     const [errors, setErrors] = useState({ email: "", password: "", generalError: "" })
     const [checked, setChecked] = useState(false)
-    const { createUser } = useContext(AuthContext);
+    const { createUser, profileUpdate } = useContext(AuthContext);
+    const navigate = useNavigate();
     const handleSubmit = e => {
         e.preventDefault();
         const form = e.target;
@@ -20,11 +22,26 @@ const Register = () => {
                 const user = result.user;
                 console.log(user);
                 setErrors({ ...errors, generalError: "" });
+                updateProfile(name, photoURL)
+                toast.success("Registration successful")
+                navigate("/login")
             })
             .catch(err => {
                 console.error(err)
                 setErrors({ ...errors, generalError: err.message })
             })
+    }
+
+    const updateProfile = (name, photoURL) => {
+        const profile = { displayName: name, photoURL: photoURL }
+        profileUpdate(profile)
+            .then(() => {
+                // Profile updated!
+                // ...
+                setErrors({ ...errors, generalError: "" });
+            }).catch((error) => {
+                console.error(error)
+            });
     }
 
     const handleEmail = e => {

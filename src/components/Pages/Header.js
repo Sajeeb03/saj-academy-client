@@ -1,10 +1,9 @@
 import React, { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import Navbar from 'react-bootstrap/Navbar'
 import { FaUser } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from "../../assets/logo.png"
 import { AuthContext } from '../../Context/AuthProvider';
 
@@ -20,24 +19,17 @@ const Header = () => {
         <Navbar collapseOnSelect expand="lg" bg="white" variant="light">
             <Container>
                 <Navbar.Brand href="#home">
-                    <img style={{ height: "50px", width: "300px", marginLeft: '-25px', padding: '0px' }} className='' src={logo} alt="" />
+                    <Link to="/">
+                        <img style={{ height: "50px", width: "300px", marginLeft: '-25px', padding: '0px' }} className='' src={logo} alt="" />
+                    </Link>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="#features">Features</Nav.Link>
-                        <Nav.Link href="#pricing">Pricing</Nav.Link>
-                        <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">
-                                Another action
-                            </NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">
-                                Separated link
-                            </NavDropdown.Item>
-                        </NavDropdown>
+                        <NavLink className={({ isActive }) => isActive ? "text-decoration-none text-primary me-4 fs-5" : "text-decoration-none text-dark me-4 fs-5"} to="/home">Home</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? "text-decoration-none text-primary me-4 fs-5" : "text-decoration-none text-dark me-4 fs-5"} to="/courses">Courses</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? "text-decoration-none text-primary me-4 fs-5" : "text-decoration-none text-dark me-4 fs-5"} to="/faq">FAQ</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? "text-decoration-none text-primary me-4 fs-5" : "text-decoration-none text-dark me-4 fs-5"} to="/blogs">Blogs</NavLink>
                     </Nav>
                     <div>
                         <>
