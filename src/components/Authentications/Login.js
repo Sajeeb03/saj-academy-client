@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from '../../Context/AuthProvider';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
@@ -13,6 +13,8 @@ const Login = () => {
     const { googleSignIn, gitHubSignIn, logInWithEmailPassword } = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
     const gitHubProvider = new GithubAuthProvider();
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -20,6 +22,7 @@ const Login = () => {
             .then(result => {
                 console.log(result.user)
                 toast.success("login successful")
+                navigate(location.state.from.pathname || "/home")
             })
             .catch(err => {
                 console.error(err)
@@ -56,6 +59,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 toast.success("login successful")
+                navigate(location.state.from.pathname || "/home")
             })
             .catch(err => {
                 console.error(err)
@@ -70,6 +74,7 @@ const Login = () => {
                 console.log(user);
                 toast.success("login successful")
                 setErrors({ ...errors, generalError: '' })
+                navigate(location.state?.from?.pathname || "/home")
             })
             .catch(err => {
                 console.error(err)

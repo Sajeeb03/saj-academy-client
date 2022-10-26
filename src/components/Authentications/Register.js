@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import toast from 'react-hot-toast';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 
 
@@ -12,6 +12,7 @@ const Register = () => {
     const [checked, setChecked] = useState(false)
     const { createUser, profileUpdate } = useContext(AuthContext);
     const navigate = useNavigate();
+    const location = useLocation();
     const handleSubmit = e => {
         e.preventDefault();
         const form = e.target;
@@ -24,7 +25,7 @@ const Register = () => {
                 setErrors({ ...errors, generalError: "" });
                 updateProfile(name, photoURL)
                 toast.success("Registration successful")
-                navigate("/login")
+                navigate(location.state?.from?.pathname || "/home", { replace: true })
             })
             .catch(err => {
                 console.error(err)
@@ -67,7 +68,7 @@ const Register = () => {
             setUserInfo({ ...userInfo, password: password })
         }
     }
-    console.log(checked)
+
     return (
         <div className='container pt-4'>
             <div className='bg-white w-50 m-auto shadow-lg p-4'>

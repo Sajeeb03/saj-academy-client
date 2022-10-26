@@ -7,9 +7,11 @@ import Courses from "../components/Pages/Courses";
 import ErrorPage from "../components/Pages/ErrorPage";
 import FAQ from "../components/Pages/FAQ";
 import Home from "../components/Pages/Home";
+import Payments from "../components/Pages/Payments";
 import Terms from "../components/Pages/Terms";
 
 import Main from "../Layouts/Main";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -53,6 +55,11 @@ const router = createBrowserRouter([
             {
                 path: "/course/:id",
                 element: <Course></Course>,
+                loader: ({ params }) => fetch(`https://learning-platform-server.vercel.app/courses/${params.id}`)
+            },
+            {
+                path: "/payments/:id",
+                element: <PrivateRoute><Payments></Payments></PrivateRoute>,
                 loader: ({ params }) => fetch(`https://learning-platform-server.vercel.app/courses/${params.id}`)
             }
         ]
