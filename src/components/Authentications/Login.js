@@ -5,16 +5,26 @@ import { Link } from 'react-router-dom';
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from '../../Context/AuthProvider';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import toast from 'react-hot-toast';
 
 const Login = () => {
     const [userInfo, setUserInfo] = useState({ email: '', password: '' });
-    const [errors, setErrors] = useState({ email: "", password: "" });
-    const { googleSignIn, gitHubSignIn } = useContext(AuthContext);
+    const [errors, setErrors] = useState({ email: "", password: "", generalError: "" });
+    const { googleSignIn, gitHubSignIn, logInWithEmailPassword } = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
     const gitHubProvider = new GithubAuthProvider();
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        logInWithEmailPassword(userInfo.email, userInfo.password)
+            .then(result => {
+                console.log(result.user)
+                toast.success("login successful")
+            })
+            .catch(err => {
+                console.error(err)
+                setErrors({ ...errors, generalError: err.message })
+            })
     }
 
     const handleEmail = e => {
@@ -45,8 +55,12 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                toast.success("login successful")
             })
-            .catch(err => console.error(err))
+            .catch(err => {
+                console.error(err)
+                setErrors({ ...errors, generalError: err.message })
+            })
     }
 
     const handleGitHubSignIn = () => {
@@ -54,8 +68,13 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                toast.success("login successful")
+                setErrors({ ...errors, generalError: '' })
             })
-            .catch(err => console.error(err))
+            .catch(err => {
+                console.error(err)
+                setErrors({ ...errors, generalError: err.message })
+            })
     }
     return (
         <div className='container pt-4'>
@@ -79,6 +98,9 @@ const Login = () => {
                     <Button className='w-100' variant="primary" type="submit">
                         Sign In
                     </Button>
+                    {
+                        errors.generalError && <p className='text-warning'>{errors.generalError}</p>
+                    }
                     <p className='mt-2 text-center'>New to SajAcademy? <Link to="/register">Register Here</Link> </p>
                 </Form>
                 <div className='w-50 m-auto'>
