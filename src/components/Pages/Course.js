@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import { FaCheck } from 'react-icons/fa';
+import { FaCheck, FaFileDownload } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
 import "../../styles/course.css"
 const Course = () => {
@@ -9,7 +9,10 @@ const Course = () => {
     return (
         <div className='container bg-white shadow-lg course-container'>
             <div className='p-4'>
-                <h1>{title}</h1>
+                <div className='d-flex justify-content-between align-items-center'>
+                    <h1>{title}</h1>
+                    <FaFileDownload className='fs-3' title='Click to download Pdf' />
+                </div>
                 <img className='course-image' src={img} alt="" />
                 <h3 className='mt-3'>Course Overview</h3>
                 <p className='fs-5'>{details}</p>
