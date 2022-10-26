@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import logo from "../../assets/logo.png"
 import { AuthContext } from '../../Context/AuthProvider';
@@ -40,7 +41,14 @@ const Header = () => {
                     </Nav>
                     <div>
                         <>
-                            {user?.uid ? <button onClick={handleSignOut}>Sign Out</button> : <Link to="/login" className='text-decoration-none'>Sign In</Link>}
+                            {user?.uid ?
+                                <>
+                                    <button className='' onClick={handleSignOut}>Sign Out</button>
+                                    <>{user.photoURL ? <img title={user.displayName} style={{ width: "40px", borderRadius: "50%" }} className='ms-1' src={user.photoURL} alt="" /> : <FaUser className='ms-2' />}</>
+                                </>
+
+                                :
+                                <Link to="/login" className='text-decoration-none'>Sign In</Link>}
                         </>
                     </div>
                 </Navbar.Collapse>
