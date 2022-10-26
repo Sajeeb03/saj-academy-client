@@ -5,7 +5,7 @@ import Header from '../components/Pages/Header';
 const Main = () => {
     return (
         <>
-            <div>
+            <div className=''>
                 <Header></Header>
             </div>
             <div style={{ height: '100vh' }} className='bg-light'>
