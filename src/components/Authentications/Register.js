@@ -8,6 +8,7 @@ import { AuthContext } from '../../Context/AuthProvider';
 const Register = () => {
     const [userInfo, setUserInfo] = useState({ email: "", password: "" })
     const [errors, setErrors] = useState({ email: "", password: "", generalError: "" })
+    const [checked, setChecked] = useState(false)
     const { createUser } = useContext(AuthContext);
     const handleSubmit = e => {
         e.preventDefault();
@@ -49,7 +50,7 @@ const Register = () => {
             setUserInfo({ ...userInfo, password: password })
         }
     }
-
+    console.log(checked)
     return (
         <div className='container pt-4'>
             <div className='bg-white w-50 m-auto shadow-lg p-4'>
@@ -75,7 +76,10 @@ const Register = () => {
                         <Form.Control onChange={handlePassword} className='bg-light' type="password" placeholder="Password" required />
                     </Form.Group>
                     {errors.password && <p className="text-warning">{errors.password}</p>}
-                    <Button className='w-100' variant="primary" type="submit">
+                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                        <Form.Check onClick={(e) => setChecked(e.target.checked)} type="checkbox" label={<>Accept <Link to="/terms">Terms and Conditions</Link></>} />
+                    </Form.Group>
+                    <Button className='w-100' variant="primary" type="submit" disabled={!checked}>
                         Register
                     </Button>
                     {
