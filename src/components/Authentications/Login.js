@@ -49,7 +49,7 @@ const Login = () => {
             setUserInfo({ ...userInfo, password: password })
         }
     }
-    console.log(userInfo);
+
     const handleGoogleSignIn = () => {
         googleSignIn(googleProvider)
             .then(result => {
