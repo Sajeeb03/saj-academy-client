@@ -3,6 +3,7 @@ import { Button } from 'react-bootstrap';
 import { FaCheck, FaFileDownload } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
 import "../../styles/course.css"
+
 const Course = () => {
     const course = useLoaderData();
     const { img, details, body, title, price, id } = course;    

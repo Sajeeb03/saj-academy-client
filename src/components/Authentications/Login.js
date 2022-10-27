@@ -82,7 +82,7 @@ const Login = () => {
             })
     }
     return (
-        <div className='container pt-4'>
+        <div className='container py-4'>
             <div className='bg-white w-50 m-auto shadow-lg p-4'>
                 <h1 className='w-100 text-center text-secondary'>Sign In</h1>
                 <Form onSubmit={handleSubmit} className='w-50 m-auto'>

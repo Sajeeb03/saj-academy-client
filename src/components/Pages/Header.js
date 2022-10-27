@@ -7,6 +7,7 @@ import { Link, NavLink } from 'react-router-dom';
 import logo from "../../assets/logo.png"
 import { AuthContext } from '../../Context/AuthProvider';
 
+
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
     const handleSignOut = () => {
