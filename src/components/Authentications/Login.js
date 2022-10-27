@@ -10,7 +10,7 @@ import toast from 'react-hot-toast';
 const Login = () => {
     const [userInfo, setUserInfo] = useState({ email: '', password: '' });
     const [errors, setErrors] = useState({ email: "", password: "", generalError: "" });
-    const { googleSignIn, gitHubSignIn, logInWithEmailPassword } = useContext(AuthContext);
+    const { googleSignIn, gitHubSignIn, logInWithEmailPassword, passwordReset } = useContext(AuthContext);
     const googleProvider = new GoogleAuthProvider();
     const gitHubProvider = new GithubAuthProvider();
     const location = useLocation();
@@ -84,6 +84,14 @@ const Login = () => {
                 setErrors({ ...errors, generalError: err.message })
             })
     }
+
+    const handleResetPassword = () => {
+        passwordReset(userInfo.email)
+            .then((result) => {
+                toast.success("Check your inbox/spam to reset!")
+            })
+            .catch(err => console.error(err))
+    }
     return (
         <div className='container py-2 py-lg-4 title'>
             <div className='bg-white shadow-lg p-4 form'>
@@ -103,6 +111,7 @@ const Login = () => {
                     {
                         errors.password && <p className='text-warning'>{errors.password}</p>
                     }
+                    <small>Forgot your password?<Button onClick={handleResetPassword} variant="link">ResetNow</Button></small>
                     <Button className='w-100' variant="primary" type="submit">
                         Sign In
                     </Button>
