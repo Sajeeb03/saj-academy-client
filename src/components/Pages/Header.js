@@ -35,7 +35,7 @@ const Header = () => {
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="me-auto">
+                    <Nav className="me-auto title">
                         <NavLink className={({ isActive }) => isActive ? "text-decoration-none text-primary me-4 fs-5" : "text-decoration-none text-dark me-4 fs-5"} to="/home">Home</NavLink>
                         <NavLink className={({ isActive }) => isActive ? "text-decoration-none text-primary me-4 fs-5" : "text-decoration-none text-dark me-4 fs-5"} to="/courses">Courses</NavLink>
                         <NavLink className={({ isActive }) => isActive ? "text-decoration-none text-primary me-4 fs-5" : "text-decoration-none text-dark me-4 fs-5"} to="/faq">FAQ</NavLink>

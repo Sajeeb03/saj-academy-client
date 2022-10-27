@@ -4,7 +4,7 @@ import "../../styles/Faq.css"
 
 const FAQ = () => {
     return (
-        <div className='container faq'>
+        <div className='container faq title'>
             <Accordion>
                 <Accordion.Item className='mb-4 shadow-lg' eventKey="0">
                     <Accordion.Header>What is Saj Academy ?</Accordion.Header>

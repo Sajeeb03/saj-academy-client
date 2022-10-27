@@ -6,7 +6,7 @@ import logo from '../../assets/logo.png'
 
 const Footer = () => {
     return (
-        <Container className='py-4'>
+        <Container className='py-4 title'>
             <Row>
                 <Col lg={4} className="pt-3">
                     <img style={{ height: "60px", width: "300px", marginLeft: '-25px', paddingTop: '0px' }} className='img-fluid' src={logo} alt="" />

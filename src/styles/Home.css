@@ -31,3 +31,9 @@
 .welcome p {
     margin: 0px;
 }
+.line {
+    background-color: gray;
+    width: 1px;
+    height: 100px;
+    margin-top: 10px;
+}

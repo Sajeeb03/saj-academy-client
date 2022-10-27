@@ -8,7 +8,7 @@ const Course = () => {
     const course = useLoaderData();
     const { img, details, body, title, price, id } = course;    
     return (
-        <div className='container bg-white shadow-lg course-container'>
+        <div className='container bg-white shadow-lg course-container title'>
             <div className='p-4'>
                 <div className='d-flex justify-content-between align-items-center'>
                     <h1>{title}</h1>
