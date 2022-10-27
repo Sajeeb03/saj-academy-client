@@ -15,6 +15,7 @@ const Login = () => {
     const gitHubProvider = new GithubAuthProvider();
     const location = useLocation();
     const navigate = useNavigate();
+    const from = location?.state?.from?.pathname || "/home";
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -22,7 +23,7 @@ const Login = () => {
             .then(result => {
                 console.log(result.user)
                 toast.success("login successful")
-                navigate(location.state.from.pathname || "/home")
+                navigate(from, { replace: true })
             })
             .catch(err => {
                 console.error(err)
@@ -60,6 +61,8 @@ const Login = () => {
                 console.log(user);
                 toast.success("login successful")
                 navigate(location.state.from.pathname || "/home")
+                setErrors({ ...errors, generalError: "" })
+
             })
             .catch(err => {
                 console.error(err)

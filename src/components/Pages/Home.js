@@ -1,10 +1,21 @@
 import React from 'react';
+import "../../styles/Home.css"
+
+
 
 const Home = () => {
     return (
-        <div>
-            <h1>Welcome home</h1>
-        </div>
+        <>
+            <div className='home-image'>
+                <div className='home-image-overlay'>
+                    <div className='welcome'>
+                        <p>Welcome</p>
+                        <p>to</p>
+                        <p>SajAcademy</p>
+                    </div>
+                </div>
+            </div>
+        </>
     );
 };
 

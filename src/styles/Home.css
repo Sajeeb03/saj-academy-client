@@ -1,0 +1,34 @@
+.home-image {
+    width: 100%;
+    height: 100vh;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("https://i.ibb.co/9WDbwgN/building.jpg");
+}
+
+.home-image-overlay {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* opacity: 45%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    font-weight: 600;
+    color: white;
+}
+
+.welcome {
+    font-family: 'Freehand', cursive;
+    font-weight: 600;
+    font-size: 60px;
+    text-align: center;
+
+}
+
+.welcome p {
+    margin: 0px;
+}
