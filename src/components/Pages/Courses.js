@@ -24,6 +24,7 @@ const Courses = () => {
                                 courses.map((course, idx) => <div className='bg-white shadow-lg rounded-2 position-relative courses-size' key={idx}>
                                         <img className='course-img rounded-top' src={course.img} alt="" />
                                     <h3 className='p-2 title'>{course.title}</h3>
+                                    <p className='px-2 title fw-semibold'>Price: ${course.price}</p>
                                     <Link to={`../course/${course.id}`}>
                                         <Button className="details-btn fw-bold" variant="info">Details</Button>
                                     </Link>
