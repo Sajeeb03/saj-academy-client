@@ -85,10 +85,10 @@ const Login = () => {
             })
     }
     return (
-        <div className='container py-4'>
-            <div className='bg-white w-50 m-auto shadow-lg p-4'>
+        <div className='container py-2 py-lg-4'>
+            <div className='bg-white shadow-lg p-4 form'>
                 <h1 className='w-100 text-center text-secondary'>Sign In</h1>
-                <Form onSubmit={handleSubmit} className='w-50 m-auto'>
+                <Form onSubmit={handleSubmit} className='form-input'>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label className='fw-bold'>Working Email</Form.Label>
                         <Form.Control onChange={handleEmail} className='bg-light' type="email" placeholder="Enter email" />
@@ -111,7 +111,7 @@ const Login = () => {
                     }
                     <p className='mt-2 text-center'>New to SajAcademy? <Link to="/register">Register Here</Link> </p>
                 </Form>
-                <div className='w-50 m-auto'>
+                <div className='form-input'>
                     <p className='text-center mb-0'>OR</p>
                     <hr className='my-1' />
                     <Button onClick={handleGoogleSignIn} className='w-100 mt-4 fw-bold' variant="outline-dark"><FaGoogle className='text-primary fs-4'></FaGoogle>  Sign in with Google</Button>

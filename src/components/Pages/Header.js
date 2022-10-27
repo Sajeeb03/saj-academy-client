@@ -57,7 +57,7 @@ const Header = () => {
                             </ToggleButton>
                         ))}
                     </ButtonGroup>
-                    <div className='ms-3'>
+                    <div className='login-btn'>
                         <>
                             {
                                 user?.uid ?

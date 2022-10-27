@@ -3,6 +3,7 @@ import { Button, Col, Container, Row } from 'react-bootstrap';
 import { FaFacebook, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png'
+import "../../styles/Footer.css"
 
 const Footer = () => {
     return (
@@ -19,7 +20,7 @@ const Footer = () => {
                     </div>
                 </Col>
                 <Col lg={4}>
-                    <div className='w-75 m-auto mt-4'>
+                    <div className='tech mt-4'>
                         <h3>Technologies We Used</h3>
                         <ul className='fs-5'>
                             <li>React Router</li>
@@ -31,7 +32,7 @@ const Footer = () => {
                     </div>
                 </Col>
                 <Col lg={4}>
-                    <div className='text-center mt-4'>
+                    <div className='explore'>
                         <h3>Explore</h3>
                         <div className='fs-5'>
                             <Link className='text-dark text-decoration-none' to="/home">Home</Link>

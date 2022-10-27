@@ -70,10 +70,10 @@ const Register = () => {
     }
 
     return (
-        <div className='container pt-4'>
-            <div className='bg-white w-50 m-auto shadow-lg p-4'>
+        <div className='container py-2 py-lg-4'>
+            <div className='bg-white form shadow-lg p-4'>
                 <h1 className='w-100 text-center text-secondary'>Register</h1>
-                <Form onSubmit={handleSubmit} className='w-50 m-auto'>
+                <Form onSubmit={handleSubmit} className='form-input'>
                     <Form.Group className="mb-3" controlId="formBasicName">
                         <Form.Label className='fw-bold'>Full Name</Form.Label>
                         <Form.Control name='name' className='bg-light' type="text" placeholder="Your full name" required />
