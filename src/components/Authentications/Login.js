@@ -60,7 +60,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 toast.success("login successful")
-                navigate(location.state.from.pathname || "/home")
+                navigate(location.state?.from?.pathname || "/home")
                 setErrors({ ...errors, generalError: "" })
 
             })
