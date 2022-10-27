@@ -20,25 +20,27 @@ const Home = () => {
             <div className='bg-light my-4'>
                 <Container className='bg-white shadow-lg'>
                     <Row>
-                        <Col className='text-center title p-4'>
+                        <Col lg={4} className='text-center title p-4'>
                             <div className='d-flex justify-content-between'>
-                                <div className='ms-4'>
+                                <div className='total'>
                                     <h1>Total Courses!</h1>
                                     <h1>8</h1>
                                 </div>
-                                <p className='line ms-4'></p>
+                                <p className='line'></p>
                             </div>
+                            <hr />
                         </Col>
-                        <Col className='text-center title p-4'>
+                        <Col lg={4} className='text-center title p-4'>
                             <div className='d-flex justify-content-between'>
-                                <div className='ms-4'>
+                                <div className='total'>
                                     <h1>Total Students!</h1>
                                     <h1>388</h1>
                                 </div>
-                                <p className='line ms-4'></p>
+                                <p className='line'></p>
                             </div>
+                            <hr />
                         </Col>
-                        <Col className='text-center title p-4'>
+                        <Col lg={4} className='text-center title p-4'>
                             <h1>Total Instructors!</h1>
                             <h1>13</h1>
                         </Col>

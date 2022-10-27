@@ -37,3 +37,37 @@
     height: 100px;
     margin-top: 10px;
 }
+.total {
+    margin-left: 30px;
+}
+
+hr {
+    display: none;
+}
+
+@media screen and (max-width:576px) {
+    .home-image {
+        height: 30vh;
+    }
+
+    .home-image-overlay {
+        height: 30vh;
+    }
+
+    .line {
+        display: none;
+    }
+
+    .welcome {
+        font-size: 30px;
+    }
+
+    .total {
+        margin: auto;
+    }
+
+    hr {
+        display: block;
+        margin-bottom: 0px;
+    }
+}

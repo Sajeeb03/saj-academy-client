@@ -15,7 +15,7 @@ const Courses = () => {
             <div className='image'>
                 <h1 className='image-overlay title'>Explore Our Courses</h1>
             </div>
-            <Container className='my-4 courses-container'>
+            <Container className='courses-container'>
                 <Row>
                     <Col lg={9}>
 
@@ -34,7 +34,7 @@ const Courses = () => {
 
                     </Col>
                     <Col lg={3}>
-                        <div className='bg-white p-4 shadow-lg h-100 title'>
+                        <div className='bg-white p-4 shadow-lg sidebar title'>
                             <h3>Courses We Offer</h3>
                             <p><small>Click to explore more</small></p>
                             {courses.map((course, idx) => <p className='sidebar-text' key={idx}><Link className='text-decoration-none' to={`../course/${course.id}`}>{course.title}</Link></p>)}
