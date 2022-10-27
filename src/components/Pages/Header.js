@@ -41,7 +41,7 @@ const Header = () => {
                         <NavLink className={({ isActive }) => isActive ? "text-decoration-none text-primary me-4 fs-5" : "text-decoration-none text-dark me-4 fs-5"} to="/faq">FAQ</NavLink>
                         <NavLink className={({ isActive }) => isActive ? "text-decoration-none text-primary me-4 fs-5" : "text-decoration-none text-dark me-4 fs-5"} to="/blogs">Blogs</NavLink>
                     </Nav>
-                    <ButtonGroup>
+                    <ButtonGroup className='title'>
                         {radios.map((radio, idx) => (
                             <ToggleButton
                                 key={idx}
@@ -57,7 +57,7 @@ const Header = () => {
                             </ToggleButton>
                         ))}
                     </ButtonGroup>
-                    <div className='login-btn'>
+                    <div className='login-btn title'>
                         <>
                             {
                                 user?.uid ?

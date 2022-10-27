@@ -18,31 +18,31 @@ const Home = () => {
                 </div>
             </div>
             <div className='bg-light my-4'>
-                <Container className='bg-white shadow-lg'>
-                    <Row>
-                        <Col lg={4} className='text-center title p-4'>
-                            <div className='d-flex justify-content-between'>
+                <Container className='bg-white shadow-lg p-4'>
+                    <Row className='test'>
+                        <Col lg={4} className='text-center title'>
+                            <div className='d-flex justify-content-around'>
                                 <div className='total'>
-                                    <h1>Total Courses!</h1>
-                                    <h1>8</h1>
+                                    <h2>Total Courses!</h2>
+                                    <h2>8</h2>
                                 </div>
-                                <p className='line'></p>
+                                <p className="line"></p>
                             </div>
                             <hr />
                         </Col>
-                        <Col lg={4} className='text-center title p-4'>
-                            <div className='d-flex justify-content-between'>
-                                <div className='total'>
-                                    <h1>Total Students!</h1>
-                                    <h1>388</h1>
+                        <Col lg={4} className='text-center title'>
+                            <div className='d-flex justify-content-around'>
+                                <div className=''>
+                                    <h2>Total Students!</h2>
+                                    <h2>388</h2>
                                 </div>
-                                <p className='line'></p>
+                                <p className="line"></p>
                             </div>
                             <hr />
                         </Col>
-                        <Col lg={4} className='text-center title p-4'>
-                            <h1>Total Instructors!</h1>
-                            <h1>13</h1>
+                        <Col lg={4} className='text-center title'>
+                            <h2>Total Instructors!</h2>
+                            <h2>13</h2>
                         </Col>
                     </Row>
                 </Container>

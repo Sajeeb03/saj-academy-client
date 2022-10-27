@@ -1,3 +1,27 @@
+# SajAcademy Learning Platform Websites
+live website link(https://saj-academy.web.app/).
+
+# This Website Contains
+
+* A educational platform containing of several Courses on Artificial Intelligence.
+* Three authentication systems, google, github and email password authentication.
+* A private route where a client only can access only if he logs in.
+* A dynamic sidebar which takes to the details page.
+* The site takes the user to location from he/she was redirect to login page
+* A purchase page which is still under construction
+* It is a single page application.
+
+
+# Technology Used
+* React
+* React Router
+* Bootstrap
+* React Bootstrap
+* Vanilla CSS
+* React hot toast
+* React to pdf
+* Firebase Authentication
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

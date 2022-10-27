@@ -85,7 +85,7 @@ const Login = () => {
             })
     }
     return (
-        <div className='container py-2 py-lg-4'>
+        <div className='container py-2 py-lg-4 title'>
             <div className='bg-white shadow-lg p-4 form'>
                 <h1 className='w-100 text-center text-secondary'>Sign In</h1>
                 <Form onSubmit={handleSubmit} className='form-input'>

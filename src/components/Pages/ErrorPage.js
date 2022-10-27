@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const ErrorPage = () => {
     return (
-        <div style={{ height: '100vh' }} className='bg-light text-warning d-flex flex-column justify-content-center align-items-center'>
+        <div style={{ height: '100vh' }} className='container title bg-light text-warning d-flex flex-column justify-content-center align-items-center'>
             <FaLaughWink className='fs-1'></FaLaughWink>
             <h1>Error 404!!</h1>
             <p className='fs-3'>Page not found</p>

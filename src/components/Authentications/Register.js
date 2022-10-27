@@ -70,7 +70,7 @@ const Register = () => {
     }
 
     return (
-        <div className='container py-2 py-lg-4'>
+        <div className='container py-2 py-lg-4 title'>
             <div className='bg-white form shadow-lg p-4'>
                 <h1 className='w-100 text-center text-secondary'>Register</h1>
                 <Form onSubmit={handleSubmit} className='form-input'>
