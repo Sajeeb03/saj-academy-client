@@ -1,0 +1,16 @@
+.blog-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media screen and (max-width:576px) {
+    .blog-container {
+        grid-template-columns: 1fr;
+    }
+
+    .blog {
+        border-radius: 12px;
+        text-align: justify;
+    }
+}

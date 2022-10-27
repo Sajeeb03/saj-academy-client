@@ -21,7 +21,7 @@ const Payments = () => {
         <div className='container bg-white shadow-lg course-container mb-4'>
             <div className='p-4 text-center'>
                 <h2>{title}</h2>
-                <h2>Price:{price}</h2>
+                <h2>Price:${price}</h2>
                 <Button onClick={handlePurchase} variant='info' className='fw-semibold fs-5'>Purchase NOW!</Button>
                 {purchase && <div className='mt-4'>
                     <h1>Thanks For Choosing Our Service</h1>

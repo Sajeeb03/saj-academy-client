@@ -85,5 +85,6 @@
         position: static;
         margin-top: 20px;
         height: auto;
+        border-radius: 12px;
     }
 }
