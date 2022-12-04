@@ -1,11 +1,13 @@
 import React from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useTitle from '../../Hooks/useTitle';
 import "../../styles/Home.css"
 
 
 
 const Home = () => {
+    useTitle("Home")
     return (
         <>
             <div className='home-image'>

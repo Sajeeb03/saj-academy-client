@@ -5,10 +5,11 @@ import Col from 'react-bootstrap/Col';
 import { Link, useLoaderData } from 'react-router-dom';
 import '../../styles/courses.css'
 import { Button } from 'react-bootstrap';
+import useTitle from '../../Hooks/useTitle';
 
 const Courses = () => {
     const courses = useLoaderData();
-
+    useTitle("Courses")
     return (
         <>
 

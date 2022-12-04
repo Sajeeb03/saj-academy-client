@@ -4,6 +4,7 @@ import { FaCheck, FaFileDownload } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
 import "../../styles/course.css"
 import ReactToPdf from "react-to-pdf";
+import useTitle from '../../Hooks/useTitle';
 
 
 const Course = () => {
@@ -15,6 +16,8 @@ const Course = () => {
         unit: 'in',
         format: [14, 12]
     };    
+
+    useTitle("CheckOut");
     return (
         <div className='container bg-white shadow-lg course-container title'>
 

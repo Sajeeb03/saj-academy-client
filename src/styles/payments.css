@@ -1,0 +1,14 @@
+.pay-form {
+    width: 400px;
+    margin: 0 auto;
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+@media (width <=400px) {
+    .pay-form {
+        width: 300px;
+        padding: 10px;
+    }
+}

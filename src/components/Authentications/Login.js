@@ -6,6 +6,7 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from '../../Context/AuthProvider';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import toast from 'react-hot-toast';
+import useTitle from '../../Hooks/useTitle';
 
 const Login = () => {
     const [userInfo, setUserInfo] = useState({ email: '', password: '' });
@@ -16,7 +17,7 @@ const Login = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const from = location?.state?.from?.pathname || "/home";
-
+    useTitle("Login");
     const handleSubmit = (e) => {
         e.preventDefault();
         logInWithEmailPassword(userInfo.email, userInfo.password)

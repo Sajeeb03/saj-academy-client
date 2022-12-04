@@ -53,8 +53,8 @@
     right: 10px;
 }
 .title {
-    /* font-family: 'Poppins', sans-serif; */
-    font-family: 'Freehand', cursive
+    font-family: 'Poppins', serif;
+        /* font-family: 'Freehand', cursive */
 }
 .sidebar {
     height: auto;
