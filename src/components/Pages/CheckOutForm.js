@@ -24,7 +24,8 @@ const CheckOutForm = ({ course }) => {
         fetch(`https://learning-platform-server-sajeeb03.vercel.app/create-payment-intent`, {
             method: "post",
             headers: {
-                "content-type": "application/json"
+                "content-type": "application/json",
+                authorization: `Bearer ${process.env.REACT_APP_PAYMENT_KEY}`
             },
             body: JSON.stringify(amount)
         })

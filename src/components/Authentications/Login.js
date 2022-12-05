@@ -17,13 +17,14 @@ const Login = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const from = location?.state?.from?.pathname || "/home";
-    useTitle("Login");
     const handleSubmit = (e) => {
         e.preventDefault();
         logInWithEmailPassword(userInfo.email, userInfo.password)
             .then(result => {
-                console.log(result.user)
+                // console.log(result.user.email)
+
                 toast.success("login successful")
+
                 navigate(from, { replace: true })
             })
             .catch(err => {
@@ -58,8 +59,6 @@ const Login = () => {
     const handleGoogleSignIn = () => {
         googleSignIn(googleProvider)
             .then(result => {
-                const user = result.user;
-                console.log(user);
                 toast.success("login successful")
                 navigate(location.state?.from?.pathname || "/home")
                 setErrors({ ...errors, generalError: "" })
@@ -74,8 +73,6 @@ const Login = () => {
     const handleGitHubSignIn = () => {
         gitHubSignIn(gitHubProvider)
             .then(result => {
-                const user = result.user;
-                console.log(user);
                 toast.success("login successful")
                 setErrors({ ...errors, generalError: '' })
                 navigate(location.state?.from?.pathname || "/home")
@@ -93,6 +90,7 @@ const Login = () => {
             })
             .catch(err => console.error(err))
     }
+    useTitle("Login");
     return (
         <div className='container py-2 py-lg-4 title'>
             <div className='bg-white shadow-lg p-4 form'>
