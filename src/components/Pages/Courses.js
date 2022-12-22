@@ -2,14 +2,21 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useNavigation } from 'react-router-dom';
 import '../../styles/courses.css'
-import { Button } from 'react-bootstrap';
+import { Button, Spinner } from 'react-bootstrap';
 import useTitle from '../../Hooks/useTitle';
 
 const Courses = () => {
+    const navigation = useNavigation();
     const courses = useLoaderData();
-    useTitle("Courses")
+    useTitle("Courses");
+    if (navigation.state === "loading") {
+        return <div style={{ height: "100vh" }} className="d-flex justify-content-center align-items-center">
+            <Spinner animation="border" variant="primary" />
+        </div>
+    };
+
     return (
         <>
 
